@@ -133,3 +133,79 @@ def func_arbitr_CV(**frutas):
         print('El valor de : ', clave," es " , frutas[clave]  )
 
 func_arbitr_CV(fruta1='manzana', fruta2='naranja', fruta3='pera')
+
+#26/08/2021
+
+def calcular(importe, descuento):
+    return importe - (importe * descuento /100)
+
+#datos = calcular(1500,10)
+datos = [1500,10]
+
+
+print("Parametros como lista: ", calcular(*datos))
+
+
+data = {"descuento": 10, "importe":1500 }
+
+print('Parametros como Diccionario: ', calcular(**data))
+
+
+#Parámetros por omisión
+
+def saludar(nombre, mensaje= "Hola "):
+    print(mensaje, nombre)
+
+saludar('Mundo!')
+
+#TAMBIEN es posible mandar argumentos como clave valor
+saludar(mensaje='Buen día ', nombre='Eduardo')
+
+#Pasar una lista como argumento
+def print_frutas(lista_frutas):
+    for fruta in lista_frutas:
+        print(fruta)
+
+#definir la lista de frutas
+
+frutas = ['manzana', 'naranja', 'uva', 'fresa']
+
+print_frutas(frutas)
+
+#FUNCION CONVERTIR A QUETZALES
+#Valores devueltos
+
+def convertir_dolares_quetzales(dolar):
+    return dolar*7.7
+
+mi_conversion = convertir_dolares_quetzales(1)
+print('La conversion en Q es: ', mi_conversion)
+
+#Funcion Recursiva sin return
+
+def cuenta_regresiva(numero):
+    numero -=1
+    if numero >0:
+        print(numero)
+        
+        cuenta_regresiva(numero)
+    else: 
+        print('Explotó')
+        print('Fin del metodo', numero)
+
+cuenta_regresiva(0)
+
+#FUNCION RECURSIVA con retorno
+def factorial(numero):
+    if numero  == 1:
+        return numero
+    elif numero < 1:
+        return ('NA')
+    else:
+        return numero * factorial(numero-1)
+        
+#Entrada de valores de usuario
+num = input('¿Cuál es el color de la fruta?: ')
+
+print(factorial(int(num)))
+
