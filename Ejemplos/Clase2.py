@@ -184,10 +184,10 @@ print('La conversion en Q es: ', mi_conversion)
 #Funcion Recursiva sin return
 
 def cuenta_regresiva(numero):
-    numero -=1
+    if(numero >0):
+        numero -=1
     if numero >0:
         print(numero)
-        
         cuenta_regresiva(numero)
     else: 
         print('Explotó')
